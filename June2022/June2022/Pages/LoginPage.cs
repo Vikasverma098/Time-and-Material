@@ -1,4 +1,6 @@
 ﻿
+using NUnit.Framework;
+
 namespace June2022.Pages
 {
     public class LoginPage
@@ -10,19 +12,30 @@ namespace June2022.Pages
 
             // launch turnup portal
             driver.Navigate().GoToUrl(" http://horse.industryconnect.io/Account/Login?ReturnUrl=%2f");
-            Thread.Sleep(1000);
+            Thread.Sleep(1500);
 
-            // identify username textbox amd enter valid username
-            IWebElement usernameTextbox = driver.FindElement(By.Id("UserName"));
-            usernameTextbox.SendKeys("hari");
+            try
 
-            // identify password textbox and enter valid password
-            IWebElement passwordTextbox = driver.FindElement(By.Id("Password"));
-            passwordTextbox.SendKeys("123123");
+            {
+                // identify username textbox amd enter valid username
+                IWebElement usernameTextbox = driver.FindElement(By.Id("UserName"));
+                usernameTextbox.SendKeys("hari");
 
-            // identify login button and click on it
-            IWebElement loginButton = driver.FindElement(By.XPath("//*[@id='loginForm']/form/div[3]/input[1]"));
-            loginButton.Click();
+                // identify password textbox and enter valid password
+                IWebElement passwordTextbox = driver.FindElement(By.Id("Password"));
+                passwordTextbox.SendKeys("123123");
+
+                // identify login button and click on it
+                IWebElement loginButton = driver.FindElement(By.XPath("//*[@id='loginForm']/form/div[3]/input[1]"));
+                loginButton.Click();
+
+            }
+            catch(Exception ex)
+            {
+                Assert.Fail("TurUp Portal home page did not launch.", ex.Message);
+            }
+
+            
 
         }
     }
