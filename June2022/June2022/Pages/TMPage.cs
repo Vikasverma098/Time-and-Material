@@ -186,17 +186,17 @@ namespace June2022.Pages
 
             }
 
-           
-            
+
+            Thread.Sleep(2000);
             IWebElement deletedCode = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[1]"));
             IWebElement deletedTypeCode = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[2]"));
             IWebElement deletedDescription = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[3]"));
             IWebElement deletedPrice = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[4]"));
 
-            Assert.That(deletedCode.Text == "Vikas Verma", "Code record hasn't been deleted");
-            Assert.That(deletedTypeCode.Text == "T", "Typecode record hasn't been deleted");
-            Assert.That(deletedDescription.Text == "Harry Potter", "Description record hasn't been deleted");
-            Assert.That(deletedPrice.Text == "$1,500.00", "Price record hasn't been deleted");
+            Assert.That(deletedCode.Text != "Vikas Verma", "Code record hasn't been deleted");
+            Assert.That(deletedTypeCode.Text != "T", "Typecode record hasn't been deleted");
+            Assert.That(deletedDescription.Text != "Harry Potter", "Description record hasn't been deleted");
+            Assert.That(deletedPrice.Text != "$1,500.00", "Price record hasn't been deleted");
 
         }
 
