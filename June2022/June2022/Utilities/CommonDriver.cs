@@ -21,12 +21,12 @@ namespace June2022.Utilities
 
         }
 
-        [TearDown]
+        /*[TearDown]
         public void CloseTestRun()
         {
             // To close chrome browser
             Thread.Sleep(5000);
             driver.Close();
-        }
+        }*/
     }       
 }

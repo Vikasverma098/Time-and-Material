@@ -29,7 +29,7 @@ namespace June2022.Tests
         public void EditEmployee()
         {            
             homePageObj.GoToEmployeePage(driver);            
-            employeePageObj.EditEmployee(driver);
+            employeePageObj.EditEmployee(driver, "iuj", "uiy");
         }
 
         [Test, Order(3)]

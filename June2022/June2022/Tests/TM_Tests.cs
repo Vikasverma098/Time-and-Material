@@ -26,7 +26,7 @@ namespace June2022.Tests
         public void EditTmTest()
         {            
             homePageObj.GoToTMPage(driver);            
-            tmPageObj.EditTM(driver);
+            tmPageObj.EditTM(driver,"p0","p1","p2");
         }
 
         [Test,Order(3), Description("Check if user is able to delete time record.")]
