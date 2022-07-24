@@ -39,7 +39,12 @@ namespace June2022.StepDefinition
 
             Assert.That(newName == "HANNA", "Actual name and created name do not match");
             Assert.That(newUserName == "HANNA HARRY", "Actual username and created username do not match");
+
+            
         }
+
+        
+
 
         [When(@"I Update '([^']*)' and '([^']*)' of an employee's record")]
         public void WhenIUpdateAndOfAnEmployeesRecord(string s0, string s1)
@@ -57,7 +62,10 @@ namespace June2022.StepDefinition
             Assert.That(newName == s0, "Actual name and edited name do not match");
             Assert.That(newUserName == s1, "Actual username and edited username do not match");
 
+          
         }
+
+        
 
         [When(@"I deleted an existing record")]
         public void WhenIDeletedAnExistingRecord()
@@ -73,7 +81,16 @@ namespace June2022.StepDefinition
 
             Assert.That(deletedName != "Las", "Name not deleted successfully, Test Fail");
             Assert.That(deletedUserName != "Vegas", "UserName not deleted successfully, Test fail");
+        
         }
+
+        [When(@"Close TestRun")]
+        public void WhenCloseTestRun()
+        {
+            driver.Quit();
+        }
+
+
 
 
 

@@ -10,6 +10,7 @@ Scenario:01) Create Employee's data with valid details
 	When I navigate to employee's feature page
 	When I create a new employee record
 	Then the record sholud be created successfully
+	When Close TestRun
 
 @tag2  
 Scenario Outline: 02) Edit Employee's data with valid details
@@ -17,7 +18,7 @@ Scenario Outline: 02) Edit Employee's data with valid details
  When I navigate to employee's feature page
  When I Update '<Name>' and '<UserName>' of an employee's record
  Then The record should have '<Name>' and '<UserName>' Updated
-
+ When Close TestRun
 
 
  Examples: 
@@ -31,3 +32,4 @@ Scenario:03) Delete existing employee's record with valid details
  When I navigate to employee's feature page
  When I deleted an existing record
  Then the record sholud be deleted sucessfully
+ When Close TestRun
